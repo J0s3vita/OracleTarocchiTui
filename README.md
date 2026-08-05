@@ -1,6 +1,6 @@
 # Oracle Deck TUI
 
-Mazzo di tarocchi/oracoli cyberpunk da terminale, estetica dark gotica esoterica:
+Un mazzo di tarocchi/oracoli cyberpunk da terminale,
 carta del giorno, stese a più carte, mazzi personalizzabili e simboli ASCII con
 animazione di rivelazione a glitch. Pensato anche come generatore di contenuti.
 
