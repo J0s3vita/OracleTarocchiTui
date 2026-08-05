@@ -44,8 +44,14 @@ oracledecktui
   parole chiave) pronto da incollare come caption.
 - **Editor mazzo** — crea/modifica carte (nome, significati, colore, ASCII art)
   senza toccare il TOML a mano; i mazzi si salvano su disco.
-- **Mazzi multipli** — due mazzi inclusi ("Void Arcana", "Neon Oracle") più i
-  tuoi; si scelgono con `d`.
+- **Mazzi multipli** — cinque mazzi inclusi ("Void Arcana", "Neon Oracle",
+  "Mors Initium", "Athanor", "La Soglia") più i tuoi; si scelgono con `d`.
+  - **Mors Initium** — oracolo necromantico: morte come soglia, ossa, silenzio
+    e ciò che torna da oltre il velo.
+  - **Athanor** — alchimia e Grande Opera: Nigredo, Albedo, Rubedo; il piombo
+    che diventa oro.
+  - **La Soglia** — sogni, specchi e stanze di passaggio: il più onirico e
+    suggestivo dei tre.
 - **Elimina mazzo** — dal picker (`d`), `d` elimina (con conferma) un mazzo
   personalizzato e il suo file; gli incorporati non si cancellano.
 - **Cancella cronologia** — dalla vista Cronologia, `X` svuota tutto (con

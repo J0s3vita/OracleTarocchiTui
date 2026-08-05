@@ -361,4 +361,46 @@ mod tests {
             println!("\n===== {:?} =====\n{}", view, screen(&app, 100, 32));
         }
     }
+
+    /// Dump dei nuovi mazzi per controllo a occhio.
+    /// `cargo test dump_new_decks -- --ignored --nocapture`
+    #[test]
+    #[ignore = "utile a mano"]
+    fn dump_new_decks() {
+        use crate::deck;
+        for deck in [deck::mors_initium(), deck::athanor(), deck::la_soglia()] {
+            for c in deck.cards.iter().take(4) {
+                let mut t = Terminal::new(TestBackend::new(60, 24)).unwrap();
+                let theme = crate::theme::THEMES[0];
+                t.draw(|f| {
+                    card::render(
+                        f,
+                        Rect {
+                            x: 10,
+                            y: 2,
+                            width: 40,
+                            height: 16,
+                        },
+                        c,
+                        crate::model::Orientation::Upright,
+                        Phase::Shown,
+                        1.0,
+                        0.0,
+                        &format!("{} {}", deck.name, c.name),
+                        &theme,
+                    );
+                })
+                .unwrap();
+                let out = t
+                    .backend()
+                    .buffer()
+                    .content()
+                    .chunks(60)
+                    .map(|r| r.iter().map(|c| c.symbol()).collect::<String>())
+                    .collect::<Vec<_>>()
+                    .join("\n");
+                println!("\n===== {}/{} =====\n{}", deck.name, c.name, out);
+            }
+        }
+    }
 }
